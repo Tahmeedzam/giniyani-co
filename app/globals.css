@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-navy: #182a55;
+  --color-navy-deep: #001440;
+  --color-navy-light: #344572;
+  --color-olive: #4c6622;
+  --color-olive-light: #6f8b42;
+  --color-olive-pale: #ceee99;
+  --color-paper: #faf9f5;
+  --color-paper-dim: #efeeea;
+  --color-paper-high: #e9e8e4;
+  --color-slate: #45464f;
+  --color-outline: #c5c6d0;
+}
+
+@theme inline {
+  --color-navy: var(--color-navy);
+  --color-navy-deep: var(--color-navy-deep);
+  --color-navy-light: var(--color-navy-light);
+  --color-olive: var(--color-olive);
+  --color-olive-light: var(--color-olive-light);
+  --color-olive-pale: var(--color-olive-pale);
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-paper-high: var(--color-paper-high);
+  --color-slate: var(--color-slate);
+  --color-outline: var(--color-outline);
+  --font-display: 'Source Serif 4', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up { transition: none !important; opacity: 1 !important; transform: none !important; }
+}

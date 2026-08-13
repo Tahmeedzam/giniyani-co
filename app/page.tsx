@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { SERVICES, BANKS, WHY_US, TESTIMONIALS, PROCESS, SITE } from "@/lib/nav-data";
+import {
+  SERVICES,
+  BANKS,
+  WHY_US,
+  TESTIMONIALS,
+  PROCESS,
+  SITE,
+} from "@/lib/nav-data";
 import Reveal from "@/components/Reveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
@@ -7,11 +14,11 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[720px] flex items-center overflow-hidden">
+      <section className="relative min-h-[640px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-paper via-paper/95 to-paper/50 z-10" />
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1560264280-88b68371db39?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
             className="w-full h-full object-cover object-center"
           />
@@ -25,10 +32,10 @@ export default function Home() {
               Quality service, built on trust, integrity &amp; knowledge.
             </h1>
             <p className="text-lg text-slate mb-8 max-w-xl leading-relaxed">
-              Led by CA. Mohmad Soheb Giniyani, our firm delivers meticulous audit,
-              taxation and advisory work for 50+ clients across India — combining
-              institutional rigour with the clarity of a firm that still picks up
-              the phone.
+              Led by CA. Mohmad Soheb Giniyani, our firm delivers meticulous
+              audit, taxation and advisory work for 50+ clients across India —
+              combining institutional rigour with the clarity of a firm that
+              still picks up the phone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -49,32 +56,44 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="py-16 bg-paper-dim border-y border-outline/30">
+      <section className="py-8 bg-paper-dim border-y border-outline/30">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-outline/40">
-          <Reveal><AnimatedCounter target={50} suffix="+" label="Corporate Clients" /></Reveal>
-          <Reveal delay={100}><AnimatedCounter target={17} label="Expert Team Members" /></Reveal>
-          <Reveal delay={200}><AnimatedCounter target={3} label="Banks Empanelled" /></Reveal>
+          <Reveal>
+            <AnimatedCounter target={50} suffix="+" label="Corporate Clients" />
+          </Reveal>
+          <Reveal delay={100}>
+            <AnimatedCounter target={17} label="Expert Team Members" />
+          </Reveal>
+          <Reveal delay={200}>
+            <AnimatedCounter target={3} label="Banks Empanelled" />
+          </Reveal>
         </div>
       </section>
 
       {/* ABOUT TEASER */}
       <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
         <Reveal>
-          <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold mb-3">About the firm</p>
+          <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold mb-3">
+            About the firm
+          </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy mb-6">
             A practice built on values, not just billable hours
           </h2>
           <p className="text-slate leading-relaxed mb-4">
-            GINIYANI &amp; ASSOCIATES is a multi-faceted Chartered Accountant firm
-            providing services across Internal Audits, Concurrent Audits, Stock
-            Audits, GST Audits, Taxation and Statutory Audits — for private
-            limited companies, partnerships and sole proprietorships alike.
+            GINIYANI &amp; ASSOCIATES is a multi-faceted Chartered Accountant
+            firm providing services across Internal Audits, Concurrent Audits,
+            Stock Audits, GST Audits, Taxation and Statutory Audits — for
+            private limited companies, partnerships and sole proprietorships
+            alike.
           </p>
           <p className="text-slate leading-relaxed mb-8">
             The clearest evidence of our reputation is simple: the majority of
             our original clients are still with us today.
           </p>
-          <Link href="/about" className="text-olive text-sm font-semibold border-b border-olive pb-0.5">
+          <Link
+            href="/about"
+            className="text-olive text-sm font-semibold border-b border-olive pb-0.5"
+          >
             Read our story →
           </Link>
         </Reveal>
@@ -83,7 +102,9 @@ export default function Home() {
             <div className="space-y-6">
               {PROCESS.map((p, i) => (
                 <div key={p.step} className="flex gap-4">
-                  <span className="font-display text-2xl text-olive/60 shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-display text-2xl text-olive/60 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div>
                     <p className="font-semibold text-navy text-sm">{p.step}</p>
                     <p className="text-sm text-slate mt-1">{p.body}</p>
@@ -99,7 +120,9 @@ export default function Home() {
       <section className="py-24 bg-white border-y border-outline/30">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="mb-14 max-w-xl">
-            <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">What we do</p>
+            <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">
+              What we do
+            </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 text-navy">
               Services, in depth
             </h2>
@@ -111,8 +134,12 @@ export default function Home() {
                   href={`/services/${s.slug}`}
                   className="border border-outline/40 rounded-lg p-6 hover:border-olive hover:shadow-md transition-all block h-full bg-paper"
                 >
-                  <h3 className="font-display text-xl text-navy mb-2">{s.title}</h3>
-                  <p className="text-sm text-slate leading-relaxed">{s.short}</p>
+                  <h3 className="font-display text-xl text-navy mb-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-slate leading-relaxed">
+                    {s.short}
+                  </p>
                 </Link>
               </Reveal>
             ))}
@@ -123,14 +150,20 @@ export default function Home() {
       {/* WHY US */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <Reveal className="mb-14 max-w-xl">
-          <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">Why choose us</p>
+          <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">
+            Why choose us
+          </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 text-navy">
             What working with us actually looks like
           </h2>
         </Reveal>
         <div className="grid sm:grid-cols-2 gap-8">
           {WHY_US.map((w, i) => (
-            <Reveal key={w.title} delay={i * 80} className="border-l-2 border-olive pl-5">
+            <Reveal
+              key={w.title}
+              delay={i * 80}
+              className="border-l-2 border-olive pl-5"
+            >
               <h3 className="font-semibold text-navy mb-2">{w.title}</h3>
               <p className="text-sm text-slate leading-relaxed">{w.body}</p>
             </Reveal>
@@ -142,7 +175,9 @@ export default function Home() {
       <section className="py-24 bg-navy">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal>
-            <p className="text-olive-pale text-xs tracking-[0.2em] uppercase font-semibold">Trusted by</p>
+            <p className="text-olive-pale text-xs tracking-[0.2em] uppercase font-semibold">
+              Trusted by
+            </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 mb-12 text-paper">
               Banking partners &amp; long-standing clients
             </h2>
@@ -164,7 +199,9 @@ export default function Home() {
       <section className="py-24 bg-paper-dim">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal className="mb-14 max-w-xl">
-            <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">In their words</p>
+            <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">
+              In their words
+            </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 text-navy">
               What clients say
             </h2>
@@ -173,7 +210,9 @@ export default function Home() {
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 80}>
                 <div className="bg-white rounded-lg p-7 border border-outline/30 h-full flex flex-col">
-                  <p className="text-slate text-sm leading-relaxed mb-6 flex-1">&ldquo;{t.quote}&rdquo;</p>
+                  <p className="text-slate text-sm leading-relaxed mb-6 flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
                   <div>
                     <p className="text-navy text-sm font-semibold">{t.name}</p>
                     <p className="text-xs text-slate">{t.org}</p>
@@ -196,10 +235,16 @@ export default function Home() {
             finances stand today and where they need to be.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mt-8">
-            <Link href="/contact" className="bg-olive text-white px-8 py-3.5 rounded text-xs tracking-[0.1em] uppercase font-semibold hover:bg-navy transition-colors">
+            <Link
+              href="/contact"
+              className="bg-olive text-white px-8 py-3.5 rounded text-xs tracking-[0.1em] uppercase font-semibold hover:bg-navy transition-colors"
+            >
               Get in Touch
             </Link>
-            <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="border border-navy text-navy px-8 py-3.5 rounded text-xs tracking-[0.1em] uppercase font-semibold hover:bg-paper-dim transition-colors">
+            <a
+              href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+              className="border border-navy text-navy px-8 py-3.5 rounded text-xs tracking-[0.1em] uppercase font-semibold hover:bg-paper-dim transition-colors"
+            >
               {SITE.phone}
             </a>
           </div>

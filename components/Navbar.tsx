@@ -2,9 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS, SERVICES, SITE } from "@/lib/nav-data";
 
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export default function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -22,8 +29,9 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) =>
-            link.label === "Services" ? (
+          {NAV_LINKS.map((link) => {
+            const active = isActive(pathname, link.href);
+            return link.label === "Services" ? (
               <div
                 key={link.href}
                 className="relative"
@@ -32,7 +40,11 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="text-xs tracking-[0.08em] uppercase font-semibold text-slate hover:text-navy transition-colors flex items-center gap-1"
+                  className={`text-xs tracking-[0.08em] uppercase font-semibold pb-1 border-b-2 flex items-center gap-1 transition-colors ${
+                    active
+                      ? "text-navy border-olive"
+                      : "text-slate border-transparent hover:text-navy"
+                  }`}
                 >
                   {link.label}
                   <span className="text-[10px]">▾</span>
@@ -46,7 +58,9 @@ export default function Navbar() {
                           href={`/services/${s.slug}`}
                           className="block px-4 py-3 hover:bg-paper-dim transition-colors rounded"
                         >
-                          <p className="text-sm font-medium text-navy">{s.title}</p>
+                          <p className="text-sm font-medium text-navy">
+                            {s.title}
+                          </p>
                           <p className="text-xs text-slate mt-0.5">{s.short}</p>
                         </Link>
                       ))}
@@ -64,12 +78,16 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs tracking-[0.08em] uppercase font-semibold text-slate hover:text-navy transition-colors"
+                className={`text-xs tracking-[0.08em] uppercase font-semibold pb-1 border-b-2 transition-colors ${
+                  active
+                    ? "text-navy border-olive"
+                    : "text-slate border-transparent hover:text-navy"
+                }`}
               >
                 {link.label}
               </Link>
-            )
-          )}
+            );
+          })}
           <Link
             href="/contact"
             className="bg-olive text-white px-6 py-2.5 rounded text-xs tracking-[0.08em] uppercase font-semibold hover:bg-navy transition-colors"
@@ -89,12 +107,15 @@ export default function Navbar() {
 
       {mobileOpen && (
         <div className="md:hidden bg-paper border-t border-outline/30 px-6 pb-6 flex flex-col gap-1">
-          {NAV_LINKS.map((link) =>
-            link.label === "Services" ? (
+          {NAV_LINKS.map((link) => {
+            const active = isActive(pathname, link.href);
+            return link.label === "Services" ? (
               <div key={link.href}>
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="w-full text-left py-3 text-sm text-navy flex items-center justify-between"
+                  className={`w-full text-left py-3 text-sm flex items-center justify-between ${
+                    active ? "text-navy font-semibold" : "text-navy"
+                  }`}
                 >
                   Services <span>{mobileServicesOpen ? "−" : "+"}</span>
                 </button>
@@ -124,13 +145,13 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-3 text-sm text-navy"
+                className={`py-3 text-sm ${active ? "text-navy font-semibold" : "text-navy"}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
-            )
-          )}
+            );
+          })}
         </div>
       )}
     </header>

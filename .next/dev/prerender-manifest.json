@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/services/internal-audits":{},"/services/concurrent-audits":{},"/services/stock-audits":{},"/services/gst-audits":{},"/services/taxation":{},"/services/statutory-audits":{},"/services/income-tax":{},"/services/certification-attestation":{},"/services/goods-service-tax-audit":{}},"dynamicRoutes":{"/services/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[slug]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"b50c035054fb3bef42b5fa0ba145c87b","previewModeSigningKey":"87276a6080ec72f3608192ee9afa051529ddd689c06c8998ee37500036428a1c","previewModeEncryptionKey":"57a5a86841b0486d8449ae8994c11c70ebd4696bca5994493626fdd0e364de56"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "64d81b7b40d183d8811f8535f0bd16de",
+    "previewModeSigningKey": "76c9bfb7f04d088ff094eedfcc32b7ee42043d56c3dc74dc29f0f99eadd6b9a2",
+    "previewModeEncryptionKey": "1ecf135dbf3f28b909eb8768615bb0d8a5026a6be7afa7f985b5073800c9aaae"
+  }
+}

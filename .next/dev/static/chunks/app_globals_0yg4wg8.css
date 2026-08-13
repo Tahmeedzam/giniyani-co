@@ -532,6 +532,26 @@
     min-height: 60px;
   }
 
+  .min-h-\[600px\] {
+    min-height: 600px;
+  }
+
+  .min-h-\[640px\] {
+    min-height: 640px;
+  }
+
+  .min-h-\[650px\] {
+    min-height: 650px;
+  }
+
+  .min-h-\[700px\] {
+    min-height: 700px;
+  }
+
+  .min-h-\[710px\] {
+    min-height: 710px;
+  }
+
   .min-h-\[720px\] {
     min-height: 720px;
   }
@@ -764,6 +784,11 @@
     border-bottom-width: 1px;
   }
 
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+
   .border-l-2 {
     border-left-style: var(--tw-border-style);
     border-left-width: 2px;
@@ -780,16 +805,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     .border-navy\/10 {
       border-color: color-mix(in oklab, var(--color-navy) 10%, transparent);
-    }
-  }
-
-  .border-navy\/20 {
-    border-color: var(--color-navy);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .border-navy\/20 {
-      border-color: color-mix(in oklab, var(--color-navy) 20%, transparent);
     }
   }
 
@@ -815,6 +830,10 @@
     .border-outline\/40 {
       border-color: color-mix(in oklab, var(--color-outline) 40%, transparent);
     }
+  }
+
+  .border-transparent {
+    border-color: #0000;
   }
 
   .border-white\/10 {
@@ -986,6 +1005,10 @@
     padding-block: calc(var(--spacing) * 4);
   }
 
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
@@ -1026,6 +1049,10 @@
     padding-bottom: calc(var(--spacing) * .5);
   }
 
+  .pb-1 {
+    padding-bottom: var(--spacing);
+  }
+
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -1040,10 +1067,6 @@
 
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
-  }
-
-  .pb-20 {
-    padding-bottom: calc(var(--spacing) * 20);
   }
 
   .pb-24 {
@@ -1363,10 +1386,6 @@
     border-color: var(--color-navy);
   }
 
-  .focus\:border-olive:focus {
-    border-color: var(--color-olive);
-  }
-
   .focus\:ring-1:focus {
     --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1374,11 +1393,6 @@
 
   .focus\:ring-navy:focus {
     --tw-ring-color: var(--color-navy);
-  }
-
-  .focus\:outline-none:focus {
-    --tw-outline-style: none;
-    outline-style: none;
   }
 
   @media (min-width: 40rem) {

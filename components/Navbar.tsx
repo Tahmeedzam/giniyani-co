@@ -106,34 +106,48 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-paper border-t border-outline/30 px-6 pb-6 flex flex-col gap-1">
+        <div className="md:hidden bg-paper border-t border-outline/30 px-5 pb-6 flex flex-col">
           {NAV_LINKS.map((link) => {
             const active = isActive(pathname, link.href);
+
             return link.label === "Services" ? (
               <div key={link.href}>
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className={`w-full text-left py-3 text-sm flex items-center justify-between ${
-                    active ? "text-navy font-semibold" : "text-navy"
+                  className={`w-full text-left py-3 text-sm flex items-center justify-between border-b-2 transition-colors ${
+                    active
+                      ? "text-navy font-semibold border-olive"
+                      : "text-navy border-transparent"
                   }`}
                 >
-                  Services <span>{mobileServicesOpen ? "−" : "+"}</span>
+                  Services
+                  <span>{mobileServicesOpen ? "−" : "+"}</span>
                 </button>
+
                 {mobileServicesOpen && (
                   <div className="pl-4 pb-2 flex flex-col gap-1">
                     {SERVICES.map((s) => (
                       <Link
                         key={s.slug}
                         href={`/services/${s.slug}`}
-                        className="py-2 text-sm text-slate"
+                        className={`py-2 text-sm border-b transition-colors ${
+                          pathname === `/services/${s.slug}`
+                            ? "text-navy font-semibold border-olive"
+                            : "text-slate border-transparent"
+                        }`}
                         onClick={() => setMobileOpen(false)}
                       >
                         {s.title}
                       </Link>
                     ))}
+
                     <Link
                       href="/services"
-                      className="py-2 text-sm text-olive"
+                      className={`py-2 text-sm border-b transition-colors ${
+                        pathname === "/services"
+                          ? "text-olive font-semibold border-olive"
+                          : "text-olive border-transparent"
+                      }`}
                       onClick={() => setMobileOpen(false)}
                     >
                       View all services →
@@ -145,13 +159,25 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`py-3 text-sm ${active ? "text-navy font-semibold" : "text-navy"}`}
+                className={`py-3 text-sm border-b-2 transition-colors ${
+                  active
+                    ? "text-navy font-semibold border-olive"
+                    : "text-navy border-transparent"
+                }`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
             );
           })}
+
+          <Link
+            href="/contact"
+            className="mt-4 bg-olive text-white px-6 py-3 rounded text-xs tracking-[0.08em] uppercase font-semibold text-center hover:bg-navy transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Book Consultation
+          </Link>
         </div>
       )}
     </header>

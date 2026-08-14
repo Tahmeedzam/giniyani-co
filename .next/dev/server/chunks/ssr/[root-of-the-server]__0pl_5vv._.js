@@ -227,75 +227,87 @@ function Navbar() {
                 columnNumber: 7
             }, this),
             mobileOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "md:hidden bg-paper border-t border-outline/30 px-6 pb-6 flex flex-col gap-1",
-                children: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$nav$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NAV_LINKS"].map((link)=>{
-                    const active = isActive(pathname, link.href);
-                    return link.label === "Services" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>setMobileServicesOpen(!mobileServicesOpen),
-                                className: `w-full text-left py-3 text-sm flex items-center justify-between ${active ? "text-navy font-semibold" : "text-navy"}`,
-                                children: [
-                                    "Services ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: mobileServicesOpen ? "−" : "+"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/Navbar.tsx",
-                                        lineNumber: 120,
-                                        columnNumber: 28
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/Navbar.tsx",
-                                lineNumber: 114,
-                                columnNumber: 17
-                            }, this),
-                            mobileServicesOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "pl-4 pb-2 flex flex-col gap-1",
-                                children: [
-                                    __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$nav$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SERVICES"].map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                            href: `/services/${s.slug}`,
-                                            className: "py-2 text-sm text-slate",
-                                            onClick: ()=>setMobileOpen(false),
-                                            children: s.title
-                                        }, s.slug, false, {
+                className: "md:hidden bg-paper border-t border-outline/30 px-5 pb-6 flex flex-col",
+                children: [
+                    __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$nav$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NAV_LINKS"].map((link)=>{
+                        const active = isActive(pathname, link.href);
+                        return link.label === "Services" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>setMobileServicesOpen(!mobileServicesOpen),
+                                    className: `w-full text-left py-3 text-sm flex items-center justify-between border-b-2 transition-colors ${active ? "text-navy font-semibold border-olive" : "text-navy border-transparent"}`,
+                                    children: [
+                                        "Services",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: mobileServicesOpen ? "−" : "+"
+                                        }, void 0, false, {
                                             fileName: "[project]/components/Navbar.tsx",
-                                            lineNumber: 125,
-                                            columnNumber: 23
-                                        }, this)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/services",
-                                        className: "py-2 text-sm text-olive",
-                                        onClick: ()=>setMobileOpen(false),
-                                        children: "View all services →"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/Navbar.tsx",
-                                        lineNumber: 134,
-                                        columnNumber: 21
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/Navbar.tsx",
-                                lineNumber: 123,
-                                columnNumber: 19
-                            }, this)
-                        ]
-                    }, link.href, true, {
-                        fileName: "[project]/components/Navbar.tsx",
-                        lineNumber: 113,
-                        columnNumber: 15
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        href: link.href,
-                        className: `py-3 text-sm ${active ? "text-navy font-semibold" : "text-navy"}`,
+                                            lineNumber: 124,
+                                            columnNumber: 19
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/Navbar.tsx",
+                                    lineNumber: 115,
+                                    columnNumber: 17
+                                }, this),
+                                mobileServicesOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "pl-4 pb-2 flex flex-col gap-1",
+                                    children: [
+                                        __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$nav$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SERVICES"].map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                href: `/services/${s.slug}`,
+                                                className: `py-2 text-sm border-b transition-colors ${pathname === `/services/${s.slug}` ? "text-navy font-semibold border-olive" : "text-slate border-transparent"}`,
+                                                onClick: ()=>setMobileOpen(false),
+                                                children: s.title
+                                            }, s.slug, false, {
+                                                fileName: "[project]/components/Navbar.tsx",
+                                                lineNumber: 130,
+                                                columnNumber: 23
+                                            }, this)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/services",
+                                            className: `py-2 text-sm border-b transition-colors ${pathname === "/services" ? "text-olive font-semibold border-olive" : "text-olive border-transparent"}`,
+                                            onClick: ()=>setMobileOpen(false),
+                                            children: "View all services →"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/Navbar.tsx",
+                                            lineNumber: 144,
+                                            columnNumber: 21
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/Navbar.tsx",
+                                    lineNumber: 128,
+                                    columnNumber: 19
+                                }, this)
+                            ]
+                        }, link.href, true, {
+                            fileName: "[project]/components/Navbar.tsx",
+                            lineNumber: 114,
+                            columnNumber: 15
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: link.href,
+                            className: `py-3 text-sm border-b-2 transition-colors ${active ? "text-navy font-semibold border-olive" : "text-navy border-transparent"}`,
+                            onClick: ()=>setMobileOpen(false),
+                            children: link.label
+                        }, link.href, false, {
+                            fileName: "[project]/components/Navbar.tsx",
+                            lineNumber: 159,
+                            columnNumber: 15
+                        }, this);
+                    }),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        href: "/contact",
+                        className: "mt-4 bg-olive text-white px-6 py-3 rounded text-xs tracking-[0.08em] uppercase font-semibold text-center hover:bg-navy transition-colors",
                         onClick: ()=>setMobileOpen(false),
-                        children: link.label
-                    }, link.href, false, {
+                        children: "Book Consultation"
+                    }, void 0, false, {
                         fileName: "[project]/components/Navbar.tsx",
-                        lineNumber: 145,
-                        columnNumber: 15
-                    }, this);
-                })
-            }, void 0, false, {
+                        lineNumber: 174,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/components/Navbar.tsx",
                 lineNumber: 109,
                 columnNumber: 9

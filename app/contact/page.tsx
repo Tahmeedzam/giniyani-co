@@ -133,12 +133,14 @@ const OFFICES = [
 
 export default function ContactPage() {
   return (
-    <main className="pt-16 pb-24 max-w-6xl mx-auto px-6">
-      <Reveal className="mb-16 pt-8">
-        <h1 className="font-display text-4xl md:text-5xl font-semibold text-navy mb-6">
+    <main className="pt-12 sm:pt-16 pb-16 sm:pb-24 max-w-6xl mx-auto px-5 sm:px-6">
+      {/* HERO */}
+      <Reveal className="mb-10 sm:mb-16 pt-6 sm:pt-8">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-navy mb-4 sm:mb-6">
           Contact Us
         </h1>
-        <p className="text-lg text-slate max-w-3xl leading-relaxed">
+
+        <p className="text-base sm:text-lg text-slate max-w-3xl leading-relaxed">
           We are committed to providing meticulous fiscal transparency and
           strategic guidance. Reach out to our offices in Mumbai or Surat, or
           submit an inquiry below for specialised financial, auditing, and
@@ -146,34 +148,50 @@ export default function ContactPage() {
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      {/* CONTENT */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+        {/* Contact Form */}
         <Reveal className="lg:col-span-7">
           <ContactForm />
         </Reveal>
 
-        <div className="lg:col-span-5 space-y-8">
+        {/* Office Cards */}
+        <div className="lg:col-span-5 space-y-5 sm:space-y-8">
           {OFFICES.map((o, i) => (
             <Reveal key={o.title} delay={i * 100}>
-              <div className="bg-white border-t-2 border-t-olive border border-outline/40 rounded-lg p-6 shadow-sm">
-                <h3 className="font-display text-xl text-navy mb-4 flex items-center gap-2">
-                  <Building2Icon size={20} className="text-olive" />
+              <div className="bg-white border-t-2 border-t-olive border border-outline/40 rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-display text-lg sm:text-xl text-navy mb-4 flex items-center gap-2">
+                  <Building2Icon size={20} className="text-olive shrink-0" />
                   {o.title}
                 </h3>
+
                 <div className="space-y-4 text-sm text-slate">
                   <div className="flex items-start gap-3">
                     <MapPinIcon
                       size={18}
                       className="text-slate/60 mt-0.5 shrink-0"
                     />
-                    <p className="leading-relaxed">{o.address}</p>
+                    <p className="leading-relaxed break-words">{o.address}</p>
                   </div>
+
                   <div className="flex items-center gap-3">
                     <PhoneIcon size={18} className="text-slate/60 shrink-0" />
-                    <p>{o.phone}</p>
+                    <a
+                      href={`tel:${o.phone.replace(/\\s/g, "")}`}
+                      className="hover:text-olive transition-colors"
+                    >
+                      {o.phone}
+                    </a>
                   </div>
+
                   <div className="flex items-center gap-3">
                     <MailIcon size={18} className="text-slate/60 shrink-0" />
-                    <p>{o.email}</p>
+                    <a
+                      href={`mailto:${o.email}`}
+                      className="hover:text-olive transition-colors break-all"
+                    >
+                      {o.email}
+                    </a>
                   </div>
                 </div>
               </div>

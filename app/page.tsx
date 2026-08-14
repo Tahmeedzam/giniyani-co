@@ -56,7 +56,7 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="py-8 bg-paper-dim border-y border-outline/30">
+      <section className="py-6 sm:py-8 bg-paper-dim border-y border-outline/30">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-outline/40">
           <Reveal>
             <AnimatedCounter target={50} suffix="+" label="Corporate Clients" />
@@ -71,12 +71,12 @@ export default function Home() {
       </section>
 
       {/* ABOUT TEASER */}
-      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-24 grid md:grid-cols-2 gap-10 sm:gap-16 items-center">
         <Reveal>
           <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold mb-3">
             About the firm
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-navy mb-5 sm:mb-6">
             A practice built on values, not just billable hours
           </h2>
           <p className="text-slate leading-relaxed mb-4">
@@ -98,7 +98,7 @@ export default function Home() {
           </Link>
         </Reveal>
         <Reveal delay={100}>
-          <div className="glass-card rounded-xl p-8 shadow-sm">
+          <div className="glass-card rounded-xl p-6 sm:p-8 shadow-sm">
             <div className="space-y-6">
               {PROCESS.map((p, i) => (
                 <div key={p.step} className="flex gap-4">
@@ -117,27 +117,30 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 bg-white border-y border-outline/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <Reveal className="mb-14 max-w-xl">
-            <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">
+      <section className="py-16 sm:py-24 bg-white border-y border-outline/30">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <Reveal className="mb-10 sm:mb-14 max-w-xl">
+            <p className="text-olive text-[10px] sm:text-xs tracking-[0.18em] uppercase font-semibold">
               What we do
             </p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 text-navy">
+
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mt-2 sm:mt-3 text-navy">
               Services, in depth
             </h2>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-6">
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
             {SERVICES.map((s, i) => (
               <Reveal key={s.slug} delay={i * 80}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="border border-outline/40 rounded-lg p-6 hover:border-olive hover:shadow-md transition-all block h-full bg-paper"
+                  className="border border-outline/40 rounded-lg p-4 sm:p-6 hover:border-olive hover:shadow-md transition-all block h-full bg-paper"
                 >
-                  <h3 className="font-display text-xl text-navy mb-2">
+                  <h3 className="font-display text-base sm:text-xl text-navy mb-2 leading-snug">
                     {s.title}
                   </h3>
-                  <p className="text-sm text-slate leading-relaxed">
+
+                  <p className="text-xs sm:text-sm text-slate leading-relaxed line-clamp-3 sm:line-clamp-none">
                     {s.short}
                   </p>
                 </Link>
@@ -148,16 +151,16 @@ export default function Home() {
       </section>
 
       {/* WHY US */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-24">
         <Reveal className="mb-14 max-w-xl">
           <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">
             Why choose us
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 text-navy">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mt-2 sm:mt-3 text-navy">
             What working with us actually looks like
           </h2>
         </Reveal>
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
           {WHY_US.map((w, i) => (
             <Reveal
               key={w.title}
@@ -172,20 +175,20 @@ export default function Home() {
       </section>
 
       {/* TRUSTED BY */}
-      <section className="py-24 bg-navy">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-navy">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <Reveal>
             <p className="text-olive-pale text-xs tracking-[0.2em] uppercase font-semibold">
               Trusted by
             </p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 mb-12 text-paper">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mt-2 sm:mt-3 mb-8 sm:mb-12 text-paper">
               Banking partners &amp; long-standing clients
             </h2>
           </Reveal>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
             {BANKS.map((b, i) => (
               <Reveal key={b.name} delay={i * 80}>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-5 sm:p-6 hover:bg-white/10 transition-colors">
                   <p className="font-display text-lg text-paper">{b.name}</p>
                   <p className="text-sm text-paper/60 mt-1">{b.desc}</p>
                 </div>
@@ -196,20 +199,20 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 bg-paper-dim">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-paper-dim">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <Reveal className="mb-14 max-w-xl">
             <p className="text-olive text-xs tracking-[0.2em] uppercase font-semibold">
               In their words
             </p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold mt-3 text-navy">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mt-2 sm:mt-3 text-navy">
               What clients say
             </h2>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 80}>
-                <div className="bg-white rounded-lg p-7 border border-outline/30 h-full flex flex-col">
+                <div className="bg-white rounded-lg p-5 sm:p-7 border border-outline/30 h-full flex flex-col">
                   <p className="text-slate text-sm leading-relaxed mb-6 flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
@@ -225,25 +228,25 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center bg-white">
+      <section className="py-16 sm:py-24 text-center bg-white">
         <Reveal>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy max-w-xl mx-auto">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-navy max-w-xl mx-auto">
             Let&apos;s talk about your audit &amp; compliance needs
           </h2>
-          <p className="text-slate mt-4 max-w-md mx-auto">
+          <p className="text-sm sm:text-base text-slate mt-4 max-w-md mx-auto">
             Reach out for a consultation — we&apos;ll walk through where your
             finances stand today and where they need to be.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8">
             <Link
               href="/contact"
-              className="bg-olive text-white px-8 py-3.5 rounded text-xs tracking-[0.1em] uppercase font-semibold hover:bg-navy transition-colors"
+              className="w-full sm:w-auto bg-olive text-white px-6 sm:px-8 py-3.5 rounded text-[11px] sm:text-xs tracking-[0.08em] uppercase font-semibold hover:bg-navy transition-colors"
             >
               Get in Touch
             </Link>
             <a
-              href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-              className="border border-navy text-navy px-8 py-3.5 rounded text-xs tracking-[0.1em] uppercase font-semibold hover:bg-paper-dim transition-colors"
+              href={`tel:${SITE.phone.replace(/\\s/g, "")}`}
+              className="w-full sm:w-auto border border-navy text-navy px-6 sm:px-8 py-3.5 rounded text-[11px] sm:text-xs tracking-[0.08em] uppercase font-semibold hover:bg-paper-dim transition-colors"
             >
               {SITE.phone}
             </a>

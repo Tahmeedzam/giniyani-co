@@ -33,6 +33,7 @@ const BaseIcon = ({ size = 22, strokeWidth = 1.75, className }: IconProps) => (
 );
 
 const ClipboardCheck: LucideIcon = BaseIcon;
+
 const RefreshCw: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -54,6 +55,7 @@ const RefreshCw: LucideIcon = ({
     <path d="M21 3v6h-6" />
   </svg>
 );
+
 const Package: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -76,6 +78,7 @@ const Package: LucideIcon = ({
     <path d="m4 7 8 4 8-4" />
   </svg>
 );
+
 const Receipt: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -100,6 +103,7 @@ const Receipt: LucideIcon = ({
     <path d="M5 18h4" />
   </svg>
 );
+
 const Landmark: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -122,6 +126,7 @@ const Landmark: LucideIcon = ({
     <path d="M9 21v-5h6v5" />
   </svg>
 );
+
 const Gavel: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -146,6 +151,7 @@ const Gavel: LucideIcon = ({
     <path d="M11 11 5 17" />
   </svg>
 );
+
 const FileText: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -169,6 +175,7 @@ const FileText: LucideIcon = ({
     <path d="M8 17h5" />
   </svg>
 );
+
 const Stamp: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -193,6 +200,7 @@ const Stamp: LucideIcon = ({
     <rect x="5" y="18" width="14" height="3" rx="1" />
   </svg>
 );
+
 const FileSearch: LucideIcon = ({
   size = 22,
   strokeWidth = 1.75,
@@ -216,6 +224,7 @@ const FileSearch: LucideIcon = ({
     <circle cx="11" cy="15" r="3" />
   </svg>
 );
+
 const ArrowRight: LucideIcon = ({
   size = 14,
   strokeWidth = 1.75,
@@ -252,14 +261,14 @@ const ICONS: Record<string, LucideIcon> = {
 
 export default function ServicesPage() {
   return (
-    <main className="pb-24">
+    <main className="pb-16 sm:pb-24">
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-12">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 pb-10 sm:pb-12">
         <Reveal className="max-w-2xl">
-          <h1 className="font-display text-4xl md:text-5xl font-semibold text-navy mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-navy mb-4 sm:mb-6">
             Our Services
           </h1>
-          <p className="text-lg text-slate leading-relaxed">
+          <p className="text-base sm:text-lg text-slate leading-relaxed">
             Delivering comprehensive financial and auditing services with
             precision and heritage. We partner with you to ensure transparency,
             compliance, and strategic growth.
@@ -268,28 +277,30 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {SERVICES.map((s, i) => {
             const Icon = ICONS[s.icon];
+
             return (
               <Reveal key={s.slug} delay={i * 80}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className={`bg-white border border-outline/40 p-8 rounded-lg hover:bg-paper-dim hover:border-olive transition-colors group block h-full 
-                  border-t-2 border-t-olive
-                  `}
+                  className="bg-white border border-outline/40 border-t-2 border-t-olive rounded-xl p-4 sm:p-8 hover:bg-paper-dim hover:border-olive transition-colors group block h-full"
                 >
-                  <div className="w-12 h-12 bg-paper-high rounded flex items-center justify-center mb-6 text-navy">
-                    <Icon size={22} strokeWidth={1.75} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-paper-high rounded flex items-center justify-center mb-3 sm:mb-6 text-navy">
+                    <Icon size={20} strokeWidth={1.75} />
                   </div>
-                  <h3 className="font-display text-xl text-navy mb-3 group-hover:text-olive transition-colors">
+
+                  <h3 className="font-display text-base sm:text-xl text-navy mb-2 sm:mb-3 group-hover:text-olive transition-colors leading-snug">
                     {s.title}
                   </h3>
-                  <p className="text-sm text-slate leading-relaxed mb-6 min-h-[60px]">
+
+                  <p className="text-xs sm:text-sm text-slate leading-relaxed mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-none">
                     {s.short}
                   </p>
-                  <span className="text-xs tracking-[0.08em] uppercase font-semibold text-navy group-hover:text-olive flex items-center gap-2 transition-colors">
+
+                  <span className="text-[10px] sm:text-xs tracking-[0.08em] uppercase font-semibold text-navy group-hover:text-olive flex items-center gap-2 transition-colors">
                     Learn More <ArrowRight size={14} />
                   </span>
                 </Link>
